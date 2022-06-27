@@ -7,52 +7,73 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var currency = ""
+struct contenView : View {
+
+    
+    @State var Imagename = "download"
     
     var body: some View {
-        VStack{
+        VStack(){
         Text("ما هو المسار المفضل لديك ")
                 .bold()
-          Image("download")
-        Text("IOS")
-            .padding(.vertical,6)
-            .frame (width: 100)
-            .foregroundColor(Color.white)
-            .background(Color.black)
-            .clipShape(Capsule())
-        Text("Gamedev")
-            .padding(.vertical,6)
-            .frame (width: 100)
-            .foregroundColor(Color.white)
-            .background(Color.black)
-            .clipShape(Capsule())
             
-        Text("Web")
-            .padding(.vertical,6)
-            .frame (width: 100)
-            .foregroundColor(Color.white)
-            .background(Color.black)
-            .clipShape(Capsule())
+        Image(Imagename)
             
-        Text("Android")
-            .padding(.vertical,6)
-            .frame (width: 100)
-            .foregroundColor(Color.white)
-            .background(Color.black)
-            .clipShape(Capsule())
-           
+                Text("IOS")
+                    .padding(.vertical,10)
+                    .frame (width: 100)
+                    .foregroundColor(Color.white)
+                    .background(Color.gray)
+                    .clipShape(Capsule())
             
-            
-                
+                    .onTapGesture {
+                        Imagename = "apple"
+                       
+                    }
+                    
+                Text("Gamedev")
+                    .padding(.vertical,10)
+                    .frame (width: 100)
+                    .foregroundColor(Color.white)
+                    .background(Color.red)
+                    .clipShape(Capsule())
+                    .onTapGesture {
+                        Imagename = "Gamedev"
+                        
+                    }
+                    
+                Text("Web")
+                    .padding(.vertical,10)
+                    .frame (width: 100)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .clipShape(Capsule())
+                    .onTapGesture {
+                        Imagename = "web"
+                        
+                    }
+                    
+                Text("Android")
+                    .padding(.vertical,10)
+                    .frame (width: 100)
+                    .foregroundColor(Color.white)
+                    .background(Color.green)
+                    .clipShape(Capsule())
+                    .onTapGesture {
+                        Imagename = "Android"
+                        
+                    }
             
         }
-            .padding()
-    }
-}
-
+               }
+               
+             
+        }
+        
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        contenView()
+    
+        
     }
 }
